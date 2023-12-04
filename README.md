@@ -1,36 +1,19 @@
 # CS532-Project
 
 ## Pyspark Inference Latency with Sentiment Analysis Model
+Authors: Lincy Pattanaik, Anirudh Hariharan, Amizhthan Madan and Yueyang Yu
 
-### Current Milestones Completed:
-- Data PreProcessing
-    - Remove symbols/URLs
-    - Remove stopwords
-    - Lower cast/ lemmatization
-    - Tokenization
-    - Sentiment Labeling
-- Model Buiding - Logistic Regression
-    - Constructing Pipeline
-        - tokenizer
-        - countVectorizer
-        - IDF
-        - Evaluator
-    - Gridsearch with CV
-    - Train with best params
-    - Evalutaions 
+### Project structure:
+- Data
+    - Data raw - contains the data after preprocssing, used by model developement
+    - Data test - used by final model training
+    - Output folders - batched files for latency test
+- Dev process
+    - Preprocessing - data prep
+    - LR model dev - model tuning
+        - long runtime for gridsearch cv 
+    - model_lr - final model
+    - Streaming - creating the streaming process
+- Docs - files submitted for grading
 
-### To Do
-- Data Streaming
-    - Try tweetpy or use another dataset 
-    - Preprocess data
-    - Offline 
-        - Analyze performance with varying batch size
-    - Online 
-        - Analyze inference latency with varying stream size
-
-- Graphs
-    - Latency vs batch size, accuracy over time
-    - Memory Profile
-
-- Optional
-    - Compare with some other model
+### To run the final code just execute evaluations.py
