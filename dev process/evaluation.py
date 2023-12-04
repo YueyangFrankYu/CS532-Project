@@ -58,12 +58,12 @@ def split_and_save(input_file, output_folder):
         split_df.write.csv(output_file, header=True, mode="overwrite")
 
 # Specify the input CSV files and output folder
-input_files = ['./data/data_test/part-00000-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
-               './data/data_test/part-00001-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
-               './data/data_test/part-00002-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
-               './data/data_test/part-00003-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
-               './data/data_test/part-00004-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv']
-output_folder = './data/output_folder'
+input_files = ['../data/data_test/part-00000-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
+               '../data/data_test/part-00001-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
+               '../data/data_test/part-00002-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
+               '../data/data_test/part-00003-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
+               '../data/data_test/part-00004-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv']
+output_folder = '../data/output_folder'
 
 # Process each input file
 for input_file in input_files:
@@ -179,7 +179,7 @@ cost_history=[594.17995,637.7453,694.7976,685.3145,1055.2205,1813.464]
 plot_cost_history(cost_history)
 
 # Load the original CSV file
-original_data = pd.read_csv('./data/data_test/part-00000-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',error_bad_lines=False)  # Replace with the actual path
+original_data = pd.read_csv('../data/data_test/part-00000-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',error_bad_lines=False)  # Replace with the actual path
 
 # Randomly select 20k data points
 selected_data = original_data.sample(n=10000, random_state=42)  # Adjust random_state for reproducibility
@@ -188,7 +188,7 @@ selected_data = original_data.sample(n=10000, random_state=42)  # Adjust random_
 chunks = np.array_split(selected_data, 20)
 
 # Define the output directory- file format:output_folder_batchsize_k
-output_directory = './data/output_folder_batchsize_500'
+output_directory = '../data/output_folder_batchsize_500'
 
 # Create the output directory if it doesn't exist
 os.makedirs(output_directory, exist_ok=True)

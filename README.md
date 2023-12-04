@@ -14,6 +14,7 @@ Authors: Lincy Pattanaik, Anirudh Hariharan, Amizhthan Madan and Yueyang Yu
         - long runtime for gridsearch cv 
     - model_lr - final model
     - Streaming - creating the streaming process
+    - evaluation - matrics for streaming evaluations
 - Docs - files submitted for grading
 
-### To run the final code just execute evaluations.py
+### To run the final code just execute streaming.py
