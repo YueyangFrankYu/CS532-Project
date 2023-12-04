@@ -58,11 +58,11 @@ def split_and_save(input_file, output_folder):
         split_df.write.csv(output_file, header=True, mode="overwrite")
 
 # Specify the input CSV files and output folder
-input_files = ['./part-00000-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
-               './part-00001-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
-               './part-00002-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
-               './part-00003-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
-               './part-00004-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv']
+input_files = ['./data/data_test/part-00000-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
+               './data/data_test/part-00001-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
+               './data/data_test/part-00002-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
+               './data/data_test/part-00003-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv',
+               './data/data_test/part-00004-29b0fbf4-8735-4a95-88cd-77da64268f21-c000.csv']
 output_folder = './data/output_folder'
 
 # Process each input file
