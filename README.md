@@ -4,17 +4,28 @@
 Authors: Lincy Pattanaik, Anirudh Hariharan, Amizhthan Madan and Yueyang Yu
 
 ### Project structure:
-- Data
-    - Data raw - contains the data after preprocssing, used by model developement
-    - Data test - used by final model training
-    - Output folders - batched files for latency test
-- Dev process
-    - Preprocessing - data prep
-    - LR model dev - model tuning
-        - long runtime for gridsearch cv 
-    - model_lr - final model
-    - Streaming - creating the streaming process
-    - evaluation - matrics for streaming evaluations
-- Docs - files submitted for grading
+- streaming.py: processes tweets in batches specified by 'maxFilesPerTrigger' parameter on line 36. 
 
-### To run the final code just execute streaming.py
+- /data
+    - /data_raw: contains the data after preprocssing, used for model developement
+    - /data_test - used for model validation and generating streams for real time pipeline 
+    - /output_folder - batched files for perfomance (latency) evaluation
+
+- /docs - files submitted for grading, contains proposal, milestone and final presentation file.
+
+- /model_development
+    - Preprocessing.py: text cleaing and generating labels for tweets
+    - 'LR model dev'.ipynb: python notebook for model tuning
+        - long runtime for gridsearch cv 
+    - model_lr.py : saving final model in /model
+
+- /model 
+    - saved model from model_development used in streaming.py and /tests/evaluation.py
+
+- /tests
+    - evaluation.py: latency measurement (total, preprpcessing, model inference) and plotting
+
+
+### To run the final code
+- python streaming.py
+    - processes data in 5 batches from 5 csv files in /data/data_test folder, classifies the tweet and prints sentiment category and latency on the console

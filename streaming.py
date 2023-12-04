@@ -34,7 +34,7 @@ streaming_df = spark.readStream \
     .option("delimiter", "\t") \
     .schema(schema) \
     .option("maxFilesPerTrigger", 1) \
-    .csv("../data/data_test", header=True)
+    .csv("./data/data_test", header=True)
 
 
 def PreprocessStream(df: DataFrame):
